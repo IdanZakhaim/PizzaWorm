@@ -12,7 +12,7 @@ public class GameScene extends JPanel {
 
 
     public GameScene(int x, int y, int width, int height) {
-//        this.setBackground(Color.GREEN);
+        this.setBackground(Color.GREEN);
         this.setBounds(x,y,width,height);
         this.worm = new Worm();
         this.backGroundGame = new ImageIcon("PizzaDesk.png");
@@ -26,6 +26,10 @@ public class GameScene extends JPanel {
     //התנגשויות בפיצות,במסך ובתולעת
     //יצירת ראנדום לגודל הפיצה ולמיקום שלה
 
+
+    protected void game (){
+
+    }
 //    protected void paintRandomPizza (){
 //        while (collision){
 //            Random randomWidth = new Random();
