@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Worm extends JPanel implements KeyListener { // implements KeyListener
+public class Worm extends JPanel implements KeyListener {
 
     private ImageIcon worm;
     private int xWorm;
@@ -12,13 +12,13 @@ public class Worm extends JPanel implements KeyListener { // implements KeyListe
 
     public Worm (){ //אולי לא צריך בסוגריים
         this.worm = new ImageIcon("WormPlay.png");
-        this.xWorm = Finals.WINDOW_WIDTH/4;
-        this.yWorm = Finals.WINDOW_HEIGHT-300;
+        this.xWorm = Finals.WINDOW_WIDTH/2;
+        this.yWorm = Finals.WINDOW_HEIGHT-75;
     }
 
-    protected void paintComponent (Graphics c){
-        super.paintComponent(c);
-        this.worm.paintIcon(this, c,this.xWorm,this.yWorm);
+    protected void paintComponent (Graphics graphics){
+        super.paintComponent(graphics);
+        this.worm.paintIcon(this, graphics,xWorm,yWorm);
     }
     public int getXWorm (){
         return xWorm;

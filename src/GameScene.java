@@ -1,8 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class GameScene extends JPanel {
+public class GameScene extends JPanel  {
 
+    private int x;
+    private int y;
+    private int width;
+    private int height;
     private Worm worm;
     private ImageIcon backGroundGame;
     private ImageIcon smallPizza;
@@ -12,14 +16,14 @@ public class GameScene extends JPanel {
 
 
     public GameScene(int x, int y, int width, int height) {
-        this.setBackground(Color.GREEN);
+//        this.setBackground(Color.GREEN);
         this.setBounds(x,y,width,height);
-        this.worm = new Worm();
+//        this.worm = new Worm();
         this.backGroundGame = new ImageIcon("PizzaDesk.png");
-        this.smallPizza = new ImageIcon("LittlePizza.png");
-        this.mediumPizza = new ImageIcon("MediumPizza.png");
-        this.bigPizza = new ImageIcon("BigPizza.png");
-        this.score = 0;
+//        this.smallPizza = new ImageIcon("LittlePizza.png");
+//        this.mediumPizza = new ImageIcon("MediumPizza.png");
+//        this.bigPizza = new ImageIcon("BigPizza.png");
+//        this.score = 0;
 //אולי להוסיף SCORE
     }
 
@@ -27,9 +31,7 @@ public class GameScene extends JPanel {
     //יצירת ראנדום לגודל הפיצה ולמיקום שלה
 
 
-    protected void game (){
 
-    }
 //    protected void paintRandomPizza (){
 //        while (collision){
 //            Random randomWidth = new Random();
@@ -44,9 +46,8 @@ public class GameScene extends JPanel {
 
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
-        this.worm.paintComponent(graphics);
+//        this.worm.paintComponent(graphics);
         this.backGroundGame.paintIcon(this, graphics, Finals.X_ZERO_POINT, Finals.Y_ZERO_POINT);
-
     }
       //  if ()
         //אם קיימת התנגשות בפיצה ראנדומלית אז תצייר פיצה אחרת (פונקציה)

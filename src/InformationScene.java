@@ -7,18 +7,18 @@ public class InformationScene extends JPanel {
     private int width;
     private int height;
     private ImageIcon Information;
-    private JLabel instruction;
+
+
 
 public InformationScene (int x, int y , int width, int height){
     this.setBounds(x,y,width,height);
     this.Information = new ImageIcon("InfomationPic.png");
-    this.instruction = new JLabel();
 }
 
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         this.Information.paintIcon(this, graphics, Finals.X_ZERO_POINT, Finals.Y_ZERO_POINT);
-                JLabel instruction1 = new JLabel("Your worm should eat as many pizzas as possible");
+        JLabel instruction1 = new JLabel("Your worm should eat as many pizzas as possible");
         JLabel instruction2 = new JLabel("The bigger the pizza, the more points you'll earn");
         JLabel instruction3 = new JLabel( "When the worm eats pizza it grows");
         JLabel instruction4 = new JLabel( "You need to be careful not to crash into the curtain walls nor the worm itself");
@@ -39,5 +39,15 @@ public InformationScene (int x, int y , int width, int height){
         this.add(instruction3);
         this.add(instruction4);
         this.add(instruction5);
+        repaint();
+    }
+
+    protected JButton createStartButton (){
+        JButton startButton = new JButton("Start");
+        startButton.setBounds(Finals.WINDOW_WIDTH/2-50,Finals.WINDOW_HEIGHT-100,Finals.WIDTH_START_BUTTON,Finals.HEIGHT_START_BUTTON);
+        startButton.setBackground(Color.blue);
+        startButton.setOpaque(true);
+        this.add(startButton);
+        return startButton;
     }
 }
