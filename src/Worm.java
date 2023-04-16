@@ -13,7 +13,7 @@ public class Worm extends JPanel implements KeyListener {
     public Worm (){ //אולי לא צריך בסוגריים
         this.worm = new ImageIcon("WormPlay.png");
         this.xWorm = Finals.WINDOW_WIDTH/2;
-        this.yWorm = Finals.WINDOW_HEIGHT-75;
+        this.yWorm = Finals.WINDOW_HEIGHT/2;
     }
 
     protected void paintComponent (Graphics graphics){
