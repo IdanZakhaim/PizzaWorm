@@ -8,7 +8,15 @@ public class GameScene extends JPanel  {
     private ImageIcon smallPizza;
     private ImageIcon mediumPizza;
     private ImageIcon bigPizza;
-    private int score;
+    private JLabel scorePoints;
+
+    private JPanel scoreLimitedAria;
+
+    private ImageIcon scorePic;
+
+    private int yourScore;
+
+    private Font pointsFont = new Font("david", Font.BOLD,20);
 
 
     public GameScene(int x, int y, int width, int height) {
@@ -19,7 +27,11 @@ public class GameScene extends JPanel  {
         this.smallPizza = new ImageIcon("LittlePizza.png");
         this.mediumPizza = new ImageIcon("MediumPizza.png");
         this.bigPizza = new ImageIcon("BigPizza.png");
-        this.score = 0;
+        this.scorePic = new ImageIcon("scorePic.png");
+        this.scorePoints = new JLabel();
+        this.scorePoints.setFont(pointsFont);
+        this.scoreLimitedAria = new JPanel();
+        this.yourScore = 0;
     }
 
     //התנגשויות בפיצות,במסך ובתולעת
@@ -42,7 +54,18 @@ public class GameScene extends JPanel  {
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         this.backGroundGame.paintIcon(this, graphics, Finals.X_ZERO_POINT, Finals.Y_ZERO_POINT);
+        this.scoreLimitedAria.setBounds(Finals.X_ZERO_POINT,Finals.Y_ZERO_POINT,Finals.WINDOW_WIDTH,Finals.HEIGTH_INFORMATION_BUTTON+10);
+        scoreLimitedAria.setBackground(Color.lightGray);
+        this.scoreLimitedAria.paint(graphics);
+        this.add(scoreLimitedAria);
+//        this.scoreLimitedAria.setVisible(true);
+        this.scorePic.paintIcon(this,graphics,375,Finals.Y_ZERO_POINT+27);
         this.worm.paintComponent(graphics);
+        this.scorePoints.setBounds(Finals.WINDOW_WIDTH/2,Finals.Y_ZERO_POINT+10,Finals.WINDOW_WIDTH/4,Finals.HEIGTH_INFORMATION_BUTTON+15);
+        this.scorePoints = new JLabel(Integer.toString(yourScore));
+        this.repaint(yourScore);
+        this.add(scorePoints);
+
     }
       //  if ()
         //אם קיימת התנגשות בפיצה ראנדומלית אז תצייר פיצה אחרת (פונקציה)
